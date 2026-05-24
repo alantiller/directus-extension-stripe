@@ -1,0 +1,49 @@
+{
+	"name": "directus-extension-stripe",
+	"description": "A simple Directus extension that adds an operation to verify the Stripe webhook signature.",
+	"icon": "extension",
+	"version": "1.0.0",
+	"keywords": [
+		"directus",
+		"directus-extension",
+		"directus-extension-bundle"
+	],
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"directus:extension": {
+		"type": "bundle",
+		"path": {
+			"app": "dist/app.js",
+			"api": "dist/api.js"
+		},
+		"entries": [
+			{
+				"type": "hook",
+				"name": "stripe-hook",
+				"source": "src/stripe-hook/index.js"
+			},
+			{
+				"type": "operation",
+				"name": "stripe-operation",
+				"source": {
+					"app": "src/stripe-operation/app.js",
+					"api": "src/stripe-operation/api.js"
+				}
+			}
+		],
+		"host": "^10.10.0"
+	},
+	"scripts": {
+		"build": "directus-extension build",
+		"dev": "directus-extension build -w --no-minify",
+		"link": "directus-extension link",
+		"validate": "directus-extension validate",
+		"add": "directus-extension add"
+	},
+	"devDependencies": {
+		"@directus/extensions-sdk": "17.0.10",
+		"vue": "^3.5.29"
+	}
+}
