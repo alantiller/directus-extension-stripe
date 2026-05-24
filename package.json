@@ -1,5 +1,5 @@
 {
-	"name": "directus-extension-stripe",
+	"name": "@alantiller/directus-extension-stripe",
 	"description": "A simple Directus extension that adds an operation to verify the Stripe webhook signature.",
 	"icon": "extension",
 	"version": "1.0.0",
